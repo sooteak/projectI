@@ -5,16 +5,16 @@ namespace App\Http\Controllers;
 use App\Events\NewObjectHasRegisteredEvent;
 use App\Models\Course;
 use App\Models\Faculty;
+use Facade\FlareClient\Stacktrace\File;
+use Illuminate\Http\File as HttpFile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File as FacadesFile;
 use NewCustomerHasRegisteredEvent;
 
 class FacultyController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+
 
     public function index(){
 
@@ -25,7 +25,7 @@ class FacultyController extends Controller
 
     public function create(){
         $courses = Course::all();
-        $faculty = Faculty::all();
+        $faculty = new Faculty();
 
 
 
@@ -33,12 +33,6 @@ class FacultyController extends Controller
     }
 
     public function store(){
-
-        // $data =  request()->validate([
-        //     'name'=>'required',
-        //     'email'=>'required|email'
-
-        // ]);
 
         // $faculty= new Faculty();
         // $faculty->name = request('name');
@@ -89,7 +83,7 @@ class FacultyController extends Controller
         return redirect('faculties');
     }
 
-    public function validateRequest(){
+    private function validateRequest(){
         return request()->validate([
             'name'=>'required',
             'email'=>'required|email',
@@ -100,4 +94,18 @@ class FacultyController extends Controller
             'curriculum_vitae' => 'required',
         ]);
     }
+
+    // private function storeFile($faculty)
+    // {
+    //     if (request()->has('file')) {
+    //         $faculty->update([
+    //             'file' => request()->file->store('uploads', 'public'),
+    //         ]);
+
+    //         $file = FacadesFile::make(public_path('storage/' . $faculty->file));
+    //         $file->save();
+    //     }
+    // }
+
+
 }

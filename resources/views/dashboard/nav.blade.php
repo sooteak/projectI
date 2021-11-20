@@ -65,17 +65,18 @@
                 </div>
                 <ul class="navbar-nav  justify-content-end">
                     <li class="nav-item d-flex align-items-center">
-                        <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+                        <a href="{{ route('admin.logout') }}" class="nav-link text-body font-weight-bold px-0">
                             <i class="fa fa-user me-sm-1" aria-hidden="true"></i>
                             <span class="d-sm-inline d-none">
-                                @if (Auth::guard('admin')->check())
-                                    <li><a href="{{ route('admin.logout') }}">Logout</a></li>
-                                @endif
-                            </span>
+                                {{-- @if (Auth::guard('admin')->check())
+                                    <a href="{{ route('admin.logout') }}">Logout</a>
+                                @endif --}}
+                            <a href="{{ route('admin.logout') }}">Logout</a>
                         </a>
                     </li>
 
                 </ul>
+
             </div>
         </div>
     </nav>

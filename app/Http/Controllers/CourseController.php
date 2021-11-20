@@ -10,10 +10,7 @@ use App\Events\NewObjectHasRegisteredEvent;
 
 class CourseController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+
 
     public function index(){
 
@@ -24,9 +21,10 @@ class CourseController extends Controller
     }
 
     public function create(){
-        $faculties = Faculty::all();
-        $course = Course::all();
-        return view('course.create',compact('faculties','course'));
+
+        $course = new Course();
+
+        return view('course.create',compact('course'));
 
     }
 
@@ -58,19 +56,20 @@ class CourseController extends Controller
     public function update(Course $course){
         $course->update($this->validateRequest());
 
-        return redirect('customers/' .$course->id);
+        return redirect('courses/' .$course->id);
     }
     public function destroy(Course $course){
         $course->delete();
 
         return redirect('courses');
     }
-    public function validateRequest(){
+    private function validateRequest(){
         return request()->validate([
 
             'name'=>'required',
             'prerequisities' => 'required',
             'description' => 'required',
+
 
 
         ]);

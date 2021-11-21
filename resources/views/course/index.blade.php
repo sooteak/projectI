@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-12">
         <h1>Course</h1>
-        <p><a href="courses/create">Add New Course</a></p>
+        <p><a href="{{ route('courses.create') }}">Add New Course</a></p>
     </div>
 </div>
 

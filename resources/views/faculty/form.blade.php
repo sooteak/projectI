@@ -40,5 +40,10 @@
     <input type="file" name="curriculum_vitae"  value="{{ old('curriculum_vitae') ?? $faculty->curriculum_vitae }}" class="form-control">
     <div>{{ $errors->first('curriculum_vitae') }}</div>
 </div>
+<div class="form-group d-flex flex-column">
+    <label for="image">Profile Image</label>
+    <input type="file" name="image" class="py-2">
+    <div>{{ $errors->first('image') }}</div>
+</div>
 
 @csrf

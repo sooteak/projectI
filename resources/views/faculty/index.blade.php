@@ -6,7 +6,7 @@
 <div class="rol">
     <div class="col-12">
         <h1>Faculty</h1>
-        <p><a href="faculties/create">Add New Faculty</a></p>
+        <p><a href="{{ route('faculties.create') }}">Add New Faculty</a></p>
     </div>
 </div>
 

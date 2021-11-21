@@ -11,7 +11,7 @@
 
 <div class="rol">
     <div class="col-12">
-        <form action="/faculties" method="POST">
+        <form action="{{ route('faculties.store') }}" method="POST" enctype="multipart/form-data">
 
             @include('faculty.form')
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Events\NewObjectHasRegisteredEvent;
 use Illuminate\Http\Request;
 use App\Models\Club;
+use Intervention\Image\Facades\Image;
 
 class ClubController extends Controller
 {
@@ -39,6 +40,8 @@ class ClubController extends Controller
         // return back();
         $club = Club::create($this->validateRequest());
 
+        $this->storeImage($club);
+
         event(new NewObjectHasRegisteredEvent($club));
         return redirect('clubs');
     }
@@ -56,6 +59,7 @@ class ClubController extends Controller
     }
     public function update(Club $club){
         $club->update($this->validateRequest());
+        $this->storeImage($club);
 
         return redirect('clubs/' .$club->id);
     }
@@ -70,7 +74,20 @@ class ClubController extends Controller
             'name'=>'required',
             'description'=> 'required',
             'member' =>'required',
+            'image' => 'sometimes|file|image|max:5000'
         ]);
+    }
+
+    private function storeImage($club){
+        if(request()->has('image')){
+            $club->update([
+                'image' => request()->image->store('uploads','public'),
+                // dd($club)
+            ]);
+
+            ;
+        }
+
     }
 
 }

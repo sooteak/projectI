@@ -16,8 +16,14 @@
 </div>
 <div class="form-group">
     <label for="description">Description:</label><br>
-    <input type="text" name="description" value="{{ old('description') ?? $course->desription }}" class="form-control">
+    <input type="text" name="description" value="{{ old('description') ?? $course->description }}" class="form-control">
     <div>{{ $errors->first('description') }}</div>
+</div>
+
+<div class="form-group d-flex flex-column">
+    <label for="image">Profile Image</label>
+    <input type="file" name="image" class="py-2">
+    <div>{{ $errors->first('image') }}</div>
 </div>
 
 

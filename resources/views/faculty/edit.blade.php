@@ -11,7 +11,7 @@
 
 <div class="rol">
     <div class="col-12">
-        <form action="/faculties/{{ $faculty->id }}" method="POST">
+        <form action="{{ route('faculties.update', ['faculty' => $faculty]) }}" method="POST" enctype="multipart/form-data">
             @method('PATCH')
             @include('faculty.form')
             <button type="submit btn btn-primary">Save Faculty</button>

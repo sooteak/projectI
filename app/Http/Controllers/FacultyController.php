@@ -52,6 +52,9 @@ class FacultyController extends Controller
         // ]);
         $faculty = Faculty::create($this->validateRequest());
 
+        $this->storeImage($faculty);
+        $this->storeFile($faculty);
+
         event(new NewObjectHasRegisteredEvent($faculty));
         return redirect('faculties');
 
@@ -74,6 +77,9 @@ class FacultyController extends Controller
     }
     public function update(Faculty $faculty){
         $faculty->update($this->validateRequest());
+        $this->storeImage($faculty);
+        $this->storeFile($faculty);
+
 
         return redirect('faculties/' .$faculty->id);
     }
@@ -91,21 +97,40 @@ class FacultyController extends Controller
             'department' => 'required',
             'position'=> 'required',
             'ext_number' => 'required|digits:10',
-            'curriculum_vitae' => 'required',
+            'curriculum_vitae' => 'sometimes|file',
+            'image' => 'sometimes|file|image|max:5000',
         ]);
     }
 
-    // private function storeFile($faculty)
-    // {
-    //     if (request()->has('file')) {
-    //         $faculty->update([
-    //             'file' => request()->file->store('uploads', 'public'),
-    //         ]);
 
-    //         $file = FacadesFile::make(public_path('storage/' . $faculty->file));
-    //         $file->save();
+
+    private function storeImage($faculty){
+        if(request()->has('image')){
+            $faculty->update([
+                'image' =>request()->image->store('uploads','public'),
+            ]);
+        }
+
+    }
+
+    // private function storeAll($faculty){
+
+    //     if(request()->has('faculty-image')!=''&& request()->has('curriculum_vitae')!=''){
+    //         $faculty->update([
+    //             'image' =>request()->image->store('uploads','public'),
+    //             'curriculum_vitae' =>request()->curriculum_vitae->store('uploads','public'),
+    //         ]);
     //     }
+
     // }
 
+    private function storeFile($faculty){
+        if(request()->has('curriculum_vitae')){
+            $faculty->update([
+                'curriculum_vitae' =>request()->file('curriculum_vitae')->move('curriculum_vitae',request()->file('curriculum_vitae')->getClientOriginalName()),
+            ]);
+        }
+
+    }
 
 }

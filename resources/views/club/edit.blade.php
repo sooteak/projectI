@@ -11,7 +11,7 @@
 
 <div class="rol">
     <div class="col-12">
-        <form action="/clubs/{{ $club->id }}" method="POST">
+        <form action="{{ route('clubs.update', ['club' => $club]) }}" method="POST" enctype="multipart/form-data">
             @method('PATCH')
             @include('club.form')
             <button type="submit btn btn-primary">Save Club</button>

@@ -6,9 +6,9 @@
 <div class="rol">
 
         <h1 >Detail for {{ $club->name }}</h1>
-        <p><a href="/clubs/{{ $club->id }}/edit">Edit</a></p>
+        <p><a href="{{ route('clubs.edit', ['club' => $club]) }}">Edit</a></p>
 
-        <form action="/clubs/{{ $club->id }}" method="POST">
+        <form action="{{ route('clubs.destroy', ['club' => $club]) }}" method="POST">
             @method('DELETE')
             @csrf
 
@@ -25,6 +25,15 @@
 
     </div>
 </div>
+
+@if ($club->image)
+    <div class="row">
+        <div class="col-12">
+            <p><strong>Icon Image</strong></p>
+            <img src="{{ asset('storage/' .$club->image) }}" alt="" class="img-thumbnail" width="300" height="300">
+        </div>
+    </div>
+@endif
 
 
 @endsection

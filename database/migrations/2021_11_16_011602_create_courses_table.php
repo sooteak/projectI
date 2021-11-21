@@ -18,7 +18,7 @@ class CreateCoursesTable extends Migration
             $table->string('name');
             $table->string('prerequisities');
             $table->string('description');
-            // $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

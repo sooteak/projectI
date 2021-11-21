@@ -7,6 +7,7 @@ use App\Models\Faculty;
 use Illuminate\Http\Request;
 use App\Events\NewCustomerHasRegisteredEvent;
 use App\Events\NewObjectHasRegisteredEvent;
+use Intervention\Image\Facades\Image;
 
 class CourseController extends Controller
 {
@@ -40,6 +41,8 @@ class CourseController extends Controller
 
         $course = Course::create($this->validateRequest());
 
+        $this->storeImage($course);
+
         event(new NewObjectHasRegisteredEvent($course));
         return redirect('courses');
     }
@@ -55,6 +58,7 @@ class CourseController extends Controller
 
     public function update(Course $course){
         $course->update($this->validateRequest());
+        $this->storeImage($course);
 
         return redirect('courses/' .$course->id);
     }
@@ -69,9 +73,15 @@ class CourseController extends Controller
             'name'=>'required',
             'prerequisities' => 'required',
             'description' => 'required',
-
-
-
+            'image' => 'sometimes|file|image|max:5000',
         ]);
+    }
+
+    private function storeImage($course){
+        if(request()->has('image')){
+            $course->update([
+                'image' =>request()->image->store('uploads','public'),
+            ]);
+        }
     }
 }

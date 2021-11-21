@@ -6,7 +6,7 @@
 <div class="rol">
     <div class="col-12">
         <h1>Club</h1>
-        <p><a href="clubs/create">Add New Club</a></p>
+        <p><a href="{{ route('clubs.create') }}">Add New Club</a></p>
     </div>
 </div>
 
@@ -22,6 +22,8 @@
     </div>
     <div class="col-4">{{ $club->member }}</div>
 </div>
+
+
 
 @endforeach
 

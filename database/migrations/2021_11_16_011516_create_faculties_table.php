@@ -21,8 +21,8 @@ class CreateFacultiesTable extends Migration
             $table->string('department');
             $table->string('position');
             $table->integer('ext_number');
-            $table->string('curriculum_vitae');
-            // $table->string('image');
+            $table->string('curriculum_vitae')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

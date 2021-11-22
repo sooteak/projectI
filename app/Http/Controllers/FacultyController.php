@@ -96,7 +96,7 @@ class FacultyController extends Controller
             'course_id' => 'required',
             'department' => 'required',
             'position'=> 'required',
-            'ext_number' => 'required|digits:10',
+            'ext_number' => 'required|min:10',
             'curriculum_vitae' => 'sometimes|file',
             'image' => 'sometimes|file|image|max:5000',
         ]);

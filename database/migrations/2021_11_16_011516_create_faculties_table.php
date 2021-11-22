@@ -20,7 +20,7 @@ class CreateFacultiesTable extends Migration
             $table->unsignedInteger('course_id');
             $table->string('department');
             $table->string('position');
-            $table->integer('ext_number');
+            $table->char('ext_number');
             $table->string('curriculum_vitae')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();

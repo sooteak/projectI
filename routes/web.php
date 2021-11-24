@@ -76,6 +76,9 @@ Route::resource('courses', 'App\Http\Controllers\CourseController');
 Route::resource('faculties', 'App\Http\Controllers\FacultyController');
 Route::resource('clubs', 'App\Http\Controllers\ClubController');
 Route::view('dashboard', 'admin.dashboard');
+// Route::view('club_', 'App\Http\Controllers\ClubController@view');
+
+
 
 
 Auth::routes();

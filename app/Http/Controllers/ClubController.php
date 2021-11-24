@@ -6,6 +6,7 @@ use App\Events\NewObjectHasRegisteredEvent;
 use Illuminate\Http\Request;
 use App\Models\Club;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Redirect;
 
 class ClubController extends Controller
 {
@@ -48,8 +49,6 @@ class ClubController extends Controller
 
     public function show(Club $club){
 
-
-
         return view('club.show',compact('club'));
     }
 
@@ -67,6 +66,10 @@ class ClubController extends Controller
         $club->delete();
 
         return redirect('clubs');
+    }
+
+    public function view(){
+        return view('club.view');
     }
 
     private function validateRequest(){
@@ -89,5 +92,8 @@ class ClubController extends Controller
         }
 
     }
+
+
+
 
 }

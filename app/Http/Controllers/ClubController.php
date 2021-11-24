@@ -68,9 +68,7 @@ class ClubController extends Controller
         return redirect('clubs');
     }
 
-    public function view(){
-        return view('club.view');
-    }
+
 
     private function validateRequest(){
         return request()->validate([

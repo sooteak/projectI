@@ -68,6 +68,7 @@ Route::get('/calendar', function () {
     return view('calendar');
 });
 
+
 Auth::routes();
 Route::resource('posts','App\Http\Controllers\PostController');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -75,6 +76,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('courses', 'App\Http\Controllers\CourseController');
 Route::resource('faculties', 'App\Http\Controllers\FacultyController');
 Route::resource('clubs', 'App\Http\Controllers\ClubController');
+// Route::resource('user_club', 'App\Http\Controllers\UserController@view');
 Route::view('dashboard', 'admin.dashboard');
 // Route::view('club_', 'App\Http\Controllers\ClubController@view');
 

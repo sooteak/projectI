@@ -35,7 +35,7 @@
                             <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">School</a>
                             <div class="dropdown-menu">
-                                <a href="{{ route('clubs.view') }}" class="dropdown-item">Club</a>
+                                <a href="user_clubs" class="dropdown-item">Club</a>
                                 <a href="insertCourse" class="dropdown-item">Course</a>
                                 <a href="insertFaculty" class="dropdown-item">Faculty</a>
                             </div>

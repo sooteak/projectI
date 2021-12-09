@@ -69,16 +69,23 @@ Route::get('/calendar', function () {
 });
 
 
+Route::get('/club/view', 'App\Http\Controllers\ViewController@viewClub');
+Route::get('/course/view', 'App\Http\Controllers\ViewController@viewCourse');
+Route::get('/faculty/view', 'App\Http\Controllers\ViewController@viewFaculty');
+
+
 Auth::routes();
 Route::resource('posts','App\Http\Controllers\PostController');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+
+
+// Route::resource('user_club', 'App\Http\Controllers\UserController@view');
+// Route::view('dashboard', 'admin.dashboard');
 Route::resource('courses', 'App\Http\Controllers\CourseController');
 Route::resource('faculties', 'App\Http\Controllers\FacultyController');
 Route::resource('clubs', 'App\Http\Controllers\ClubController');
-// Route::resource('user_club', 'App\Http\Controllers\UserController@view');
-Route::view('dashboard', 'admin.dashboard');
-// Route::view('club_', 'App\Http\Controllers\ClubController@view');
+
 
 
 
@@ -87,7 +94,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //user login
-Route::post('/user/logout', [App\Http\Controllers\Auth\LoginController::class, 'userLogout'])->name('user.logout');
+Route::get('/user/logout', [App\Http\Controllers\Auth\LoginController::class, 'userLogout'])->name('user.logout');
 //admin login
 Route::group(['prefix' => 'admin'], function() {
 	Route::group(['middleware' => 'admin.guest'], function(){
@@ -96,7 +103,16 @@ Route::group(['prefix' => 'admin'], function() {
 	});
 
 	Route::group(['middleware' => 'admin.auth'], function(){
-		Route::get('/dashboard',[App\Http\Controllers\DashboardController::class, 'dashboard'])->name('admin.dashboard');
+
+
+        Route::get('/dashboard',[App\Http\Controllers\DashboardController::class, 'dashboard'])->name('admin.dashboard');
+
+        Route::resource('courses', 'App\Http\Controllers\CourseController');
+        Route::resource('faculties', 'App\Http\Controllers\FacultyController');
+        Route::resource('clubs', 'App\Http\Controllers\ClubController');
+
+        // Route::resource('/dashboard', 'App\Http\Controllers\AdminController');
+        //admin logout
         Route::get('/logout', [App\Http\Controllers\AdminController::class, 'logout'])->name('admin.logout');
 	});
 });

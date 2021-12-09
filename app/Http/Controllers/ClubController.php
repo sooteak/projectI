@@ -8,6 +8,7 @@ use App\Models\Club;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Redirect;
 
+
 class ClubController extends Controller
 {
 
@@ -68,6 +69,10 @@ class ClubController extends Controller
         return redirect('clubs');
     }
 
+    // public function view(){
+    //     $clubs = Club::all();
+    //     return view('club.view',compact('clubs'));
+    // }
 
 
     private function validateRequest(){

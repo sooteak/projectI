@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('user.layout')
 @section('content')
 <html>
     <body style="border-radius: 5px;background:#7979798f;margin-top:100px;padding:20px;margin-bottom: 100px;text-align:center;">
@@ -31,7 +31,7 @@
         <a href="/file/Student Residence Application Form.pdf" download><button type="button">Student Residence Application Form</button></a><br><hr>
         <p><strong>Multi-purpose Hall Application Form</strong></p>
         <a href="/file/Multi-Purpose Hall Application Form.pdf" download><button type="button">Multi-Purpose Hall Application Form</button></a><br><hr>
-        
+
     </body>
 </html>
 @endsection

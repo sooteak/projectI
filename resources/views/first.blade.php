@@ -1,6 +1,6 @@
-@extends('layout')
+@extends('user.layout')
 @section('content')
-       
+
         <!-- About-->
         <section class="about-section text-center" id="about" style="background: #7979798f;">
             <div class="container px-4 px-lg-5">
@@ -9,7 +9,7 @@
                         <h2 class="text-white mb-4">Southern Virtual Open Day</h2>
                         <p class="text-white-50">
                         Southern University College, abbreviated as Southern UC, is a non-profit, private university college in Malaysia. It is the first non-profit higher education institute and private university college in Skudai, Johor. Currently, Southern UC have 7 faculties, 3 schools, 6 research institutes and 7 academic centres.
-                          
+
                         </p>
                     </div>
                 </div>

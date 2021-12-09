@@ -35,9 +35,9 @@
                             <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">School</a>
                             <div class="dropdown-menu">
-                                <a href="user_clubs" class="dropdown-item">Club</a>
-                                <a href="insertCourse" class="dropdown-item">Course</a>
-                                <a href="insertFaculty" class="dropdown-item">Faculty</a>
+                                <a href="/club/view"class="dropdown-item">Club</a>
+                                <a href="/course/view" class="dropdown-item">Course</a>
+                                <a href="/faculty/view" class="dropdown-item">Faculty</a>
                             </div>
                             </li>
                         </ul>
@@ -58,14 +58,70 @@
                     <form class="form-inline my-2 my-lg-0">
                         <a href="profile"><img src="image/person-circle-white.png" width="50px" height="50px"></a>
                     </form>
-                    {{-- <li class="nav-item"><a class="nav-link" href="download">Download Resources</a></li> --}}
+
+                    <ul class="navbar-nav ml-auto">
+                        {{-- @guest
+                        @if (Route::has('login'))
+                        <li class="nav-item dropdown">
+                          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><i class="material-icons fa-2x">person</i></a>
+                          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="{{ route('login') }}">{{ __('Login') }}</a>
+                          <a class="dropdowm-item" href="{{ route('admin.login') }}">Admin Login</a>
+                          </div>
+                        </li>
+                      @endif
+                      @else
+                              <li class="nav-item dropdown">
+                                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                      {{ Auth::user()->name }}
+                                  </a>
+
+                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item" href="{{ route('logout') }}"
+                                         onclick="event.preventDefault();
+                                                       document.getElementById('logout-form').submit();">
+                                          {{ __('Logout') }}
+                                      </a>
+
+                                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                          @csrf
+                                      </form>
+                                      <a class="dropdown-item" href="{{ route('admin.login') }}">Admin Login</a>
+                                  </div>
+                              </li>
+                      @endguest --}}
+                      @guest
+                      @if (Route::has('login'))
+                      <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Login/Register</a>
+                        <div class="dropdown-menu">
+                            <a href="{{ route('login') }}" class="dropdown-item">Login</a>
+                            <a href="{{ route('register') }}" class="dropdown-item">Register</a>
+                        </div>
+                    </li>
+                    @endif
+                    @else
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            {{ Auth::user()->name }}
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="{{ route('user.logout') }}" class="dropdown-item">Logout</a>
+                        </div>
+                    </li>
+                    @endguest
+                    </ul>
+
                 </ul>
             </div>
     </div>
 </nav>
 
+<div class="container">
+    @yield('content')
+</div>
 
-@yield('content')
 
         <div id="feedback">
           <a href="feedback"><div id="feedback-tab">Feedback</div></a>

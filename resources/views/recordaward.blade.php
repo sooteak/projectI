@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('user.layout')
 @section('content')
 <style>
 body{
@@ -25,10 +25,10 @@ body{
                 </table>
                 <a href="recordaward"><input type="submit" value="Submit"></a>
                 <input type="reset" value="Clear">
-                <a href="first"><button>Back</button></a>
+                <a href="home"><button>Back</button></a>
             </fieldset>
         </form>
         <br>
-        
+
     </body>
     @endsection

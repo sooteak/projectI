@@ -1,14 +1,14 @@
-@extends('layout')
+@extends('user.layout')
 @section('content')
 <link rel="stylesheet" href="css/app.css">
 
-<div class="container d-flex">	
+<div class="container d-flex">
     <div class="container">
         <br />
         <div class="row">
             <div class="col-sm-6 col-lg-3"  style="border: 0.2px grey ;border-radius: 10px;box-shadow:  2px 4px 4px 2px rgba(0,0,0,0.2);height: 600px;margin: 20px">
                 <div class="panel panel-primary">
-                    
+
 
                 <div class="panel-body text-center">
                         <img src="/image/person-circle.svg" width="70px" height="70px" style="margin: 40px;">
@@ -58,5 +58,5 @@
         </div>
     </div>
 </div>
-        
+
 @endsection

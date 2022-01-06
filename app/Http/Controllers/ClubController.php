@@ -42,7 +42,7 @@ class ClubController extends Controller
         // return back();
         $club = Club::create($this->validateRequest());
 
-        $this->storeImage($club);
+
 
         event(new NewObjectHasRegisteredEvent($club));
         return redirect('clubs');
@@ -78,25 +78,9 @@ class ClubController extends Controller
     private function validateRequest(){
         return request()->validate([
             'name'=>'required',
-            'description'=> 'required',
-            'member' =>'required',
-            'image' => 'sometimes|file|image|max:5000'
+            'category'=> 'required',
+            'link'=> 'required|url'
         ]);
     }
-
-    private function storeImage($club){
-        if(request()->has('image')){
-            $club->update([
-                'image' => request()->image->store('uploads','public'),
-                // dd($club)
-            ]);
-
-            ;
-        }
-
-    }
-
-
-
 
 }

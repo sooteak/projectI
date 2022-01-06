@@ -1,3 +1,5 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -27,7 +29,7 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive" style="font-size:15px;">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav mX-auto">
                     <li class="nav-item"><a class="nav-link" href="download">Download Resources</a></li>
                     <li class="nav-item"><a class="nav-link" href="map">Map</a></li>
                     <div id="navbarCollapse" class="collapse navbar-collapse">
@@ -60,39 +62,9 @@
                     </form>
 
                     <ul class="navbar-nav ml-auto">
-                        {{-- @guest
-                        @if (Route::has('login'))
-                        <li class="nav-item dropdown">
-                          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><i class="material-icons fa-2x">person</i></a>
-                          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="{{ route('login') }}">{{ __('Login') }}</a>
-                          <a class="dropdowm-item" href="{{ route('admin.login') }}">Admin Login</a>
-                          </div>
-                        </li>
-                      @endif
-                      @else
-                              <li class="nav-item dropdown">
-                                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                      {{ Auth::user()->name }}
-                                  </a>
-
-                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="{{ route('logout') }}"
-                                         onclick="event.preventDefault();
-                                                       document.getElementById('logout-form').submit();">
-                                          {{ __('Logout') }}
-                                      </a>
-
-                                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                          @csrf
-                                      </form>
-                                      <a class="dropdown-item" href="{{ route('admin.login') }}">Admin Login</a>
-                                  </div>
-                              </li>
-                      @endguest --}}
-                      @guest
-                      @if (Route::has('login'))
-                      <li class="nav-item dropdown">
+                    @guest
+                    @if (Route::has('login'))
+                    <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Login/Register</a>
                         <div class="dropdown-menu">
                             <a href="{{ route('login') }}" class="dropdown-item">Login</a>
@@ -124,7 +96,7 @@
 
 
         <div id="feedback">
-          <a href="feedback"><div id="feedback-tab">Feedback</div></a>
+          <a href="/feedback"><div id="feedback-tab">Feedback</div></a>
         </div>
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div></footer>

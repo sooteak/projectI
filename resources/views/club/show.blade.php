@@ -20,20 +20,12 @@
 <div class="row">
     <div class="col-12">
         <p><strong>Name</strong><br>{{ $club->name }}</p>
-        <p><strong>Description</strong><br>{{ $club->description }}</p>
-        <p><strong>Member</strong><br>{{ $club->member }}</p>
+        <p><strong>Category</strong><br>
+            {{ $club->category }}
+        </p>
+        <p><strong>Link</strong><br>{{ $club->link }}</p>
 
     </div>
 </div>
-
-@if ($club->image)
-    <div class="row">
-        <div class="col-12">
-            <p><strong>Icon Image</strong></p>
-            <img src="{{ asset('storage/' .$club->image) }}" alt="" class="img-thumbnail" width="300" height="300">
-        </div>
-    </div>
-@endif
-
 
 @endsection

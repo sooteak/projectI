@@ -17,10 +17,15 @@
         {{ $club->id }}
     </div>
 
+    <div class="col-2">
+        {{ $club->category }}
+    </div>
     <div class="col-4">
         <a href="/clubs/{{ $club->id }}">{{ $club->name }}</a>
     </div>
-    <div class="col-4">{{ $club->member }}</div>
+    <div class="col-4">
+        <a href="{{ $club->link }}">{{ $club->link }}</a>
+    </div>
 </div>
 
 

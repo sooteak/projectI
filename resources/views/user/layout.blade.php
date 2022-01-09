@@ -44,7 +44,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div id="navbarCollapse" class="collapse navbar-collapse">
+                    {{-- <div id="navbarCollapse" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Award</a>
@@ -56,10 +56,7 @@
                                 </div>
                             </li>
                         </ul>
-                    </div>
-                    <form class="form-inline my-2 my-lg-0">
-                        <a href="profile"><img src="image/person-circle-white.png" width="50px" height="50px"></a>
-                    </form>
+                    </div> --}}
 
                     <ul class="navbar-nav ml-auto">
                     @guest
@@ -73,10 +70,15 @@
                     </li>
                     @endif
                     @else
-
+                    <form class="form-inline my-2 my-lg-0">
+                        <a href="profile"><img src="image/person-circle-white.png" width="50px" height="50px"></a>
+                    </form>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+
                             {{ Auth::user()->name }}
+
+
                         </a>
                         <div class="dropdown-menu">
                             <a href="{{ route('user.logout') }}" class="dropdown-item">Logout</a>

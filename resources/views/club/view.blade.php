@@ -33,6 +33,7 @@
                 <ul>
                     @foreach($category01 as $category)
                         <li><a href="{{ $category->link }}">{{ $category->name }}</a></li>
+
                     @endforeach
                 </ul>
             </div>

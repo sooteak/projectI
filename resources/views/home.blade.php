@@ -20,16 +20,16 @@
         <section class="projects-section bg-light" id="projects">
             <div class="container px-4 px-lg-5">
                 <!-- Featured Project Row-->
-                <h2 style="text-align: center;margin: 20px"><strong>School Feature</strong></h2>
+                {{-- <h2 style="text-align: center;margin: 20px"><strong>校园信息</strong></h2>
                 <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="image/pg05.jpg" alt="..." /></div>
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="https://www.southern.edu.my/newssystem/attached/image/2021/07/20210701113557_146.jpg" alt="..." /></div>
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
-                            <h4>Shoreline</h4>
-                            <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                            <h4>南院中医系参与第三届饶师泉中医知识竞赛暨中医学生交流营</h4>
+                            <p class="text-black-50 mb-0">南方大学学院中医药学院学生代表参与了拉曼大学（UTAR）于2021年6月19日至20日举办为期2天的第三届饶师泉中医知识竞赛暨中医学生交流营。由于受到疫情影响，本次活动以线上方式进行。本次活动吸引来自各大院校的中医系学生参与，其中本校中医系9名学生参与。 主办单位于2021年6月4日至5日提前进行4场线上讲座为活动预热，分别是马来西亚中医发展史、中医美容保健、中医系统生化学与中医中医眼科。此外，营员于活动前视讯提前认识自己的组员。营员分为4组，即衷一、逍遥散、小柴胡汤和天人合一。 活动第一天，各组于活动开始时再次自我介绍和喊口...</p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Featured Project Row-->
                 <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
                     <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="image/hall2.jpg" alt="..." /></div>

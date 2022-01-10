@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/flatly/bootstrap.min.css">
-    <title>Bootstrap Compatible Form Validator Examples</title>
+    <title>FeedBack Form</title>
     <script>
 
         function showMessage(){
@@ -56,7 +56,7 @@
         <div class="form-group">
             <label for="name"><strong>Details:</strong></label> <br>
             <textarea name="comment" form="form" placeholder="Enter text here..." rows="4" cols="100"></textarea> </div>
-            <a href="home"><button type="button" class="btn btn-block btn-primary" onclick="showMessage()">Submit</button></a>
+            <a href="first"><button type="button" class="btn btn-block btn-primary" onclick="showMessage()">Submit</button></a>
         </div>
 
         </form>

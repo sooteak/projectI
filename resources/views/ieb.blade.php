@@ -2,9 +2,9 @@
 @section('content')
 
 <link rel="stylesheet" href="css/app.css">
-<div style="align: center;margin-left: 190px">
-    <img src="/image/h1.jpg" alt="pg05" width=200 height=200 style="margin: 30px">
-    <img src="/image/h2.jfif" alt="pg05" width=200 height=200 style="margin: 30px">
+<div style="align: center;margin-left: 190px;margin-top: 80px;margin-top: 90px">
+    <img src="/images/ieb.jpeg" alt="pg05" width=200 height=200 style="margin: 30px">
+    <img src="/images/ieb2.jpg" alt="pg05" width=200 height=200 style="margin: 30px">
 
     </div>
    <div style="margin: 190px;margin-top: 20px">

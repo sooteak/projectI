@@ -2,8 +2,8 @@
 @section('content')
 
 <link rel="stylesheet" href="css/app.css">
-<div style="align: center;margin-left: 190px">
-    <img src="/image/hostel11.jpg" alt="pg05" width=200 height=200 style="margin: 30px">
+<div style="align: center;margin-left: 190px;margin-top: 90px">
+    <img src="/images/hostel.jpeg" alt="pg05" width=200 height=200 style="margin: 30px">
     <img src="https://ad962edbae8ba7b03b7f-d10007df79b5b7a4e475a291e50a08cf.ssl.cf3.rackcdn.com/2634/open-a-hostel-article.png" alt="pg05" width=200 height=200 style="margin: 30px">
 
     </div>

@@ -18,6 +18,12 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('first');
 });
+Route::get('/first', function () {
+    return view('first');
+});
+Route::get('/home', function () {
+    return view('first');
+});
 Route::get('/landing', function () {
     return view('landing');
 });
@@ -54,6 +60,9 @@ Route::get('/hall', function () {
 });
 Route::get('/main', function () {
     return view('main');
+});
+Route::get('/medical', function () {
+    return view('medical');
 });
 Route::get('/recordaward', function () {
     return view('recordaward');
@@ -92,7 +101,7 @@ Route::resource('clubs', 'App\Http\Controllers\ClubController');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/first', [App\Http\Controllers\HomeController::class, 'index'])->name('first');
 //user login
 Route::get('/user/logout', [App\Http\Controllers\Auth\LoginController::class, 'userLogout'])->name('user.logout');
 //admin login

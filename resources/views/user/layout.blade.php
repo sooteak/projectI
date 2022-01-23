@@ -17,10 +17,14 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/style.css" rel="stylesheet" />
 
+
     </head>
     <body id="page-top">
 
 <!-- Navigation-->
+<br>
+<br>
+<br>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-black" id="mainNav">
     <div class="container px-4 px-lg-5">
         <a class="navbar-brand" href="first">Southern Virtual Open Day</a>
@@ -44,7 +48,7 @@
                             </li>
                         </ul>
                     </div>
-                    {{-- <div id="navbarCollapse" class="collapse navbar-collapse">
+                    <div id="navbarCollapse" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Award</a>
@@ -56,7 +60,7 @@
                                 </div>
                             </li>
                         </ul>
-                    </div> --}}
+                    </div>
 
                     <ul class="navbar-nav ml-auto">
                     @guest
@@ -70,7 +74,7 @@
                     </li>
                     @endif
                     @else
-                    
+
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
 
@@ -107,3 +111,5 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
+
+

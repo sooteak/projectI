@@ -82,6 +82,10 @@ class CourseController extends Controller
             $course->update([
                 'image' =>request()->image->store('uploads','public'),
             ]);
+
+            $image = Image::make(public_path('storage/' .$course->image ));
+            $image->save();
+
         }
     }
 }

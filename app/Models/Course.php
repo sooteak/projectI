@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     protected $guarded = [];
+    protected $table = 'courses';
 
     public function faculty(){
         return $this->hasMany(Faculty::class);

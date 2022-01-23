@@ -5,7 +5,12 @@
 @section('content')
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+
+
+
 <head>
+<link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="templatemo-video-catalog.css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript" src="/jquery/jquery-1.8.3.min.js"></script>
 <script>
@@ -35,7 +40,7 @@ body {
 	font-family: Tahoma, Geneva, sans-serif;
 	line-height: 20px;
 }
-.faculty_arrow_left {
+/* .faculty_arrow_left {
 	position: absolute;
 	top: 150px;
 	left: 0px;
@@ -46,7 +51,7 @@ body {
 	top: 150px;
 	right: 0px;
 	cursor: pointer;
-}
+} */
 .faculty_list {
 	position: relative;
 	overflow-x: hidden;
@@ -165,32 +170,37 @@ body {
 }
 </style>
 </head>
+<!-- About-->
 
 <body>
-<div class="faculty_slider">
-  <div class="faculty_arrow_left"><img src="/images/arrow_left.png" width="30" height="60" /></div>
-  <div class="faculty_arrow_right"><img src="/images/arrow_right.png" width="30" height="60" /></div>
-  <div class="faculty_list" >
-    @foreach($courses as $course)
-    <div class="faculty">
-        <div class="card">
-            <div class="front" >
-                <div class="title">{{$course->name}}</div>
-            </div>
-            <div class="back" >
-            <div class="faculty_image" ><img src="{{ asset('storage/' .$course->image) }}" width="220" height="146" /></div>
-                <div class="faculty_name">
-                    <div class="faculty_introduction" >Description:  {{$course->description}} </div>
-                    <div class="prerequisities">Prerequisities: {{ $course->prerequisities }}</div>
-                </div>
 
+    <div class="row tm-catalog-item-list">
+
+        @foreach ($course as $courses)
+        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item pb-5">
+            <div class="position-relative tm-thumbnail-container">
+
+                <div class="faculty">
+                    <div class="img-fluid tm-catalog-item-img">
+                    <div class="card">
+                        <div class="front" >
+                            <div class="title">{{$courses->name}}</div>
+                        </div>
+                        <div class="back" >
+                            <div class="faculty_image" ><img src="{{ asset('storage/' .$courses->image) }}" width="220" height="146" /></div>
+                                <div class="faculty_name">
+                                    <div class="faculty_introduction" >Description:  {{$courses->description}} </div>
+                                    <div class="prerequisities">Prerequisities: {{ $courses->prerequisities }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
+        @endforeach
     </div>
-    @endforeach
-  </div>
-</div>
 </body>
 </html>
 

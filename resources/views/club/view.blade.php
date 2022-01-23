@@ -1,6 +1,6 @@
 @extends('user.layout')
 
-@section('title','Details for Course')
+@section('title','Details for Club')
 
 @section('content')
 
@@ -121,4 +121,4 @@
         </div>
     </div>
 
-@endsection
+    @endsection

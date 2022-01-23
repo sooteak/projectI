@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Club;
 use App\Models\Faculty;
 use App\Models\Course;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class ViewController extends Controller
 {
@@ -29,8 +31,13 @@ class ViewController extends Controller
     }
 
     public function viewCourse(){
-        $courses = Course::all();
-        return view('course.view',compact('courses'));
+        $course = Course::all();
+        // $course=DB::table('courses')->paginate(9);//apply SQL select * from categories
+        // $course = Course::latest()->take(3)->get();
+
+        Return view('course.view')->with('course',$course);
+
+        // return view('',compact(''));
 
     }
     public function viewFaculty(){

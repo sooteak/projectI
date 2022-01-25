@@ -17,17 +17,13 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/style.css" rel="stylesheet" />
 
-
     </head>
     <body id="page-top">
 
 <!-- Navigation-->
-<br>
-<br>
-<br>
-<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-black" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav">
     <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="first">Southern Virtual Open Day</a>
+        <a class="navbar-brand" href="/first">Southern Virtual Open Day</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
@@ -36,6 +32,7 @@
                 <ul class="navbar-nav mX-auto">
                     <li class="nav-item"><a class="nav-link" href="download">Download Resources</a></li>
                     <li class="nav-item"><a class="nav-link" href="map">Map</a></li>
+                    <li class="nav-item"><a class="nav-link" href="forum">Forum</a></li>
                     <div id="navbarCollapse" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item dropdown">
@@ -48,7 +45,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div id="navbarCollapse" class="collapse navbar-collapse">
+                    {{-- <div id="navbarCollapse" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Award</a>
@@ -60,13 +57,13 @@
                                 </div>
                             </li>
                         </ul>
-                    </div>
+                    </div> --}}
 
                     <ul class="navbar-nav ml-auto">
                     @guest
                     @if (Route::has('login'))
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Students</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Login/Register</a>
                         <div class="dropdown-menu">
                             <a href="{{ route('login') }}" class="dropdown-item">Login</a>
                             <a href="{{ route('register') }}" class="dropdown-item">Register</a>
@@ -88,32 +85,6 @@
                     </li>
                     @endguest
                     </ul>
-
-                    <ul class="navbar-nav ml-auto">
-                        @guest
-                        @if (Route::has('admin.login'))
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Staff</a>
-                            <div class="dropdown-menu">
-                                <a href="{{ route('admin.login') }}" class="dropdown-item">Login</a>
-                            </div>
-                        </li>
-                        @endif
-                        @else
-
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-
-                                {{ Auth::admin()->name }}
-
-
-                            </a>
-                            <div class="dropdown-menu">
-                                <a href="{{ route('admin.logout') }}" class="dropdown-item">Logout</a>
-                            </div>
-                        </li>
-                        @endguest
-                        </ul>
 
                 </ul>
             </div>
@@ -137,5 +108,3 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
-
-

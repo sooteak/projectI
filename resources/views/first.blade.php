@@ -44,7 +44,7 @@
                 <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
                     <div class="col-lg-6"><img class="img-fluid" src="https://www.southern.edu.my/newssystem/attached/image/2020/07/20200707090830_420.jpg" alt="..."/></div>
                     <div class="col-lg-6">
-                        <div class="bg-black text-center h-100 project">
+                        <div class="bg-dark text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-left">
                                     <h4 class="text-white">Outcome Based Education Training on 18 June 2020</h4>
@@ -61,7 +61,7 @@
                 <div class="row gx-0 justify-content-center">
                     <div class="col-lg-6"><img class="img-fluid" src="https://www.southern.edu.my/newssystem/attached/image/2020/06/20200622130501_839.png" alt="..." /></div>
                     <div class="col-lg-6 order-lg-first">
-                        <div class="bg-black text-center h-100 project">
+                        <div class="bg-dark text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-right">
                                     <h4 class="text-white">Online Career Talk: Accountant -The Business Doctor</h4>

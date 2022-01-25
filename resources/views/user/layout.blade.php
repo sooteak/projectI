@@ -66,7 +66,7 @@
                     @guest
                     @if (Route::has('login'))
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Login/Register</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Students</a>
                         <div class="dropdown-menu">
                             <a href="{{ route('login') }}" class="dropdown-item">Login</a>
                             <a href="{{ route('register') }}" class="dropdown-item">Register</a>
@@ -88,6 +88,32 @@
                     </li>
                     @endguest
                     </ul>
+
+                    <ul class="navbar-nav ml-auto">
+                        @guest
+                        @if (Route::has('admin.login'))
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Staff</a>
+                            <div class="dropdown-menu">
+                                <a href="{{ route('admin.login') }}" class="dropdown-item">Login</a>
+                            </div>
+                        </li>
+                        @endif
+                        @else
+
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+
+                                {{ Auth::admin()->name }}
+
+
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="{{ route('admin.logout') }}" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                        @endguest
+                        </ul>
 
                 </ul>
             </div>

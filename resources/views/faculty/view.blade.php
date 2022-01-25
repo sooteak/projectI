@@ -6,35 +6,6 @@
 @endsection
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-{{-- <div class="container">
-    @foreach($faculties as $faculty)
-    <div class="row">
-        <div class="col-6 offset-3">
-
-        <img src="{{ asset('storage/' .$faculty->image) }}" class="w-100">
-
-        </div>
-    </div>
-    <div class="row pt-2 pb-4">
-        <div class="col-6 offset-3">
-            <div>
-                <p>
-                <span class="font-weight-bold">
-                    <span class="text-dark">{{ $faculty->name }}</span>
-
-                </span> {{ $faculty->department }}
-                </p>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            {{ $faculty->curriculum_vitae }}
-        </div>
-    </div>
-</div> --}}
 
 @foreach($faculties as $faculty)\
     <div class="row pt-5 offset-3">
@@ -43,6 +14,7 @@
                 <img src="{{ asset('storage/' .$faculty->image) }}" class="w-4">
             </a>
         </div>
+
         <div class="col-4 pb-4">
             <span class="font-weight-bold">
                 <span class="text-dark">{{ $faculty->name }}</span>
@@ -55,5 +27,6 @@
         </div>
     </div>
 
+    <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="80%" color=#987cb9 SIZE=3>
 @endforeach
 

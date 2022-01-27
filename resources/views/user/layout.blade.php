@@ -30,9 +30,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive" style="font-size:15px;">
                 <ul class="navbar-nav mX-auto">
-                    <li class="nav-item"><a class="nav-link" href="download">Download Resources</a></li>
-                    <li class="nav-item"><a class="nav-link" href="map">Map</a></li>
-                    <li class="nav-item"><a class="nav-link" href="forum">Forum</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/download">Download Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/map">Map</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/forum">Forum</a></li>
                     <div id="navbarCollapse" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item dropdown">
@@ -63,7 +63,7 @@
                     @guest
                     @if (Route::has('login'))
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Login/Register</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">User</a>
                         <div class="dropdown-menu">
                             <a href="{{ route('login') }}" class="dropdown-item">Login</a>
                             <a href="{{ route('register') }}" class="dropdown-item">Register</a>
@@ -83,6 +83,18 @@
                             <a href="{{ route('user.logout') }}" class="dropdown-item">Logout</a>
                         </div>
                     </li>
+                    @endguest
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                    @guest
+                    @if (Route::has('admin.login'))
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Admin</a>
+                        <div class="dropdown-menu">
+                            <a href="{{ route('admin.login') }}" class="dropdown-item">Login</a>
+                        </div>
+                    </li>
+                    @endif
                     @endguest
                     </ul>
 

@@ -67,7 +67,7 @@
           <table class="table" id="MyTable" style="background-color: #edfafa; border:0px;border-radius:10px">
             <tbody id="record">
               @foreach ($forum as $forums)
-                  {{ $forums->name }}({{ $forums->question }})
+                  {{ $forums->name }} :{{ $forums->question }}
 
               @endforeach
             </tbody>

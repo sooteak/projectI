@@ -76,6 +76,12 @@ Route::get('/video', function () {
 Route::get('/calendar', function () {
     return view('calendar');
 });
+// Route::get('/forum', function () {
+//     return view('forum');
+// });
+// Route::view('forum','forum');
+Route::get('forum', 'App\Http\Controllers\ForumController@list');
+Route::post('forum', 'App\Http\Controllers\ForumController@store');
 
 
 Route::get('/club/view', 'App\Http\Controllers\ViewController@viewClub');
